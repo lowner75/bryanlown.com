@@ -1,0 +1,26 @@
+//- views/include/scripts.pug
+
+//- ========================
+//- Vendor JS
+//- ========================
+
+//- Bootstrap (bundle includes Popper) ...
+script(src="/js/vendor/bootstrap.bundle.min.js")
+
+//- GSAP animations ...
+script(src="/js/vendor/gsap.min.js")
+
+//- ========================
+//- Page-specific scripts
+//- ========================
+
+block scripts
+  if pageScripts
+    each src in pageScripts
+      script(src=src)
+
+//- ========================
+//- Vite helper (bundled frontend JS)
+//- ========================
+
+!= viteScript()
